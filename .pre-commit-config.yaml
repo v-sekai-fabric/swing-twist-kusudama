@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types: [markdown]
+        # Vendored copies are kept exactly as upstream ships them. That is the
+        # property which makes the next re-vendor a readable diff, and
+        # reformatting them destroys it. Matches at any depth, not just the root.
+        exclude: "(^|/)(thirdparty|third_party|vendor|external|deps)/"

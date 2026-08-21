@@ -54,9 +54,8 @@ never clamps over the swing sphere, not a teleport.
 ## Re-importing the scene
 
 Dump the open scene from the editor with the godot MCP bridge (`run_script`), writing one transient
-`data/humanoid_<table>.json` per table (cones, joints, meta, targets, ground_truth). Then `lake exe
-import-scene` folds each JSON into `data/humanoid_<table>.parquet` (zstd) via DuckDB `read_json_auto`
-and deletes the JSON, so `data/` stays Parquet-only. The older toy scene (three 10° cones at
-+Y/+X/+Z) stays in `data/scene_cones.parquet` / `data/kusudama_ground_truth.parquet` for reference.
+`data/humanoid_<table>.json` per table (cones, joints, meta, targets, ground*truth). Then `lake exe
+import-scene` folds each JSON into `data/humanoid*<table>.parquet`(zstd) via DuckDB`read_json_auto`and deletes the JSON, so`data/`stays Parquet-only. The older toy scene (three 10° cones at
++Y/+X/+Z) stays in`data/scene_cones.parquet`/`data/kusudama_ground_truth.parquet` for reference.
 
 Parquet loads back through lean-duckdb or any DuckDB.
